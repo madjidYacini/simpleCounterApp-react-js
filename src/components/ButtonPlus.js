@@ -1,12 +1,18 @@
 import React from "react"
 
-
 class BtnP extends React.Component {
+
+handleClick = () => {
+ 
+    this.props.onClickFunction(this.props.incrementValue);
+   
+   }
+
     render(){
     return (
-    <button onClick ={this.props.onClickFunction}>
+    <button onClick ={this.handleClick}>
     
-    +1
+    +{this.props.incrementValue}
     
     </button>
     );

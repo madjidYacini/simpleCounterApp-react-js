@@ -4,11 +4,16 @@ import { render } from 'react-dom';
 
 
     class BtnM extends React.Component {
+        handleClick = () => {
+ 
+            this.props.onClickFunctionM(this.props.decrementValue);
+           
+           }
         render(){
         return (
-        <button onClick ={this.props.onClickFunctionM}>
+        <button onClick ={this.handleClick}>
         
-        -1
+        -{this.props.decrementValue}
         
         </button>
         );

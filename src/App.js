@@ -11,18 +11,18 @@ import Result from './components/Result';
 
 class App extends Component {
   state = {counter :0}
-  incrementCounter = ()=>{
+  incrementCounter = (incrementValue)=>{
    this.setState((prevState)=>({
    
-   counter : prevState.counter + 1
+   counter : prevState.counter + incrementValue
    
    }))
    
   }
   
-  decrementCounter = ()=>{
+  decrementCounter = (decrementValue)=>{
   this.setState((prevState)=>({
-  counter : prevState.counter - 1 
+  counter : prevState.counter - decrementValue
   }))
   }
   resetCounter = ()=>{
@@ -41,9 +41,17 @@ class App extends Component {
         </header>
         <p className="App-intro">
         <div>
-        <BtnP onClickFunction ={this.incrementCounter} />
-        <BtnM onClickFunctionM ={this.decrementCounter} />
+        <BtnP incrementValue = {1} onClickFunction ={this.incrementCounter} />
+        <BtnM decrementValue ={1} onClickFunctionM ={this.decrementCounter} />
+        <BtnP incrementValue = {5} onClickFunction ={this.incrementCounter} />
+        <BtnM decrementValue ={5} onClickFunctionM ={this.decrementCounter} />
+        
+        <BtnP incrementValue = {10} onClickFunction ={this.incrementCounter} />
+        <BtnM decrementValue ={10} onClickFunctionM ={this.decrementCounter} />
+        
         <BtnR onClickFunctionR ={this.resetCounter} />
+        
+        
         
         
         <Result counter = {this.state.counter} />
